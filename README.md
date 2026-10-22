@@ -82,15 +82,24 @@ Meta's approval of your use case; reviews can take weeks and can be rejected.
 It is built for businesses messaging customers, not for reading your personal
 chats. Meta fees apply. Official does not mean Meta endorses a community project.
 
-| Name | What it is | Reads / sends | Where history is kept | Runs on | Price / license |
-|---|---|---|---|---|---|
-| [Meta WhatsApp Business Tools MCP](https://developers.facebook.com/documentation/mcp/whatsapp-business-tools-mcp) | Meta's own MCP for account, number and template setup, plus test sends. Endpoint `https://mcp.facebook.com/whatsapp_business_tools`. | Test sends; reading not verified | Not a chat store | Meta | Not verified |
-| [Kapso MCP](https://docs.kapso.ai/docs/whatsapp/mcp) | Hosted MCP: send, read stored conversations, manage templates and webhooks. | Reads and sends (read-only by default) | Theirs, period not stated | Hosted | Free tier: 2,000 messages/month, one number |
-| [FredShred7/whatsapp-mcp-server](https://github.com/FredShred7/whatsapp-mcp-server) | Community Cloud API wrapper for messages, media and templates. Receiving needs webhooks. | Reads and sends | In memory only, while it runs | Your computer or server | MIT |
+**The 24-hour window:** a business can only send free-form messages within 24
+hours of the customer's last message. After that, only pre-approved templates
+go through. This is where agent replies usually break, so the table shows
+whether each tool handles it for you.
+
+| Name | What it is | Reads / sends | Handles the 24-hour window? | Where history is kept | Runs on | Price / license |
+|---|---|---|---|---|---|---|
+| [Meta WhatsApp Business Tools MCP](https://developers.facebook.com/documentation/mcp/whatsapp-business-tools-mcp) | Meta's own MCP for account, number and template setup, plus test sends. Endpoint `https://mcp.facebook.com/whatsapp_business_tools`. | Test sends; reading not verified | Not verified | Not a chat store | Meta | Not verified |
+| [Kapso MCP](https://docs.kapso.ai/docs/whatsapp/mcp) | Hosted MCP: send, read stored conversations, manage templates and webhooks. | Reads and sends (read-only by default) | Not documented for MCP; the inbox flags failed sends | Theirs, period not stated | Hosted | Free tier: 2,000 messages/month, one number |
+| [SendFromChat](https://sendfromchat.com/docs) | Hosted Cloud API platform with remote MCP (Claude, ChatGPT, Claude Code, Cursor and others) and a REST API. | Reads and sends | Yes: checks the window and blocks free-form sends when closed; the assistant picks a template ([docs](https://sendfromchat.com/guides/whatsapp-cloud-api-error-codes)) | Theirs, while your account is active; deleted within 30 days of workspace deletion ([privacy](https://sendfromchat.com/privacy)) | Hosted | 30-day trial, then from $19/month plus Meta fees |
+| [FredShred7/whatsapp-mcp-server](https://github.com/FredShred7/whatsapp-mcp-server) | Community Cloud API wrapper for messages, media and templates. Receiving needs webhooks. | Reads and sends | Not documented | In memory only, while it runs | Your computer or server | MIT |
 
 ## Automation platforms
 
-Business Cloud API unless noted.
+Business Cloud API unless noted. None of these documents automatic handling of
+the [24-hour window](#business-api-official): n8n and Zapier leave the choice of
+template to you, and a Zapier send outside the window can fail while the Zap
+still shows success.
 
 | Name | What it is | Reads / sends | Where history is kept | Runs on | Price / license |
 |---|---|---|---|---|---|
