@@ -1,0 +1,5 @@
+Export notes without a timestamp
+Another unknown line
+[22/10/2026, 09:00:00] Messages and calls are end-to-end encrypted.
+[31/02/2026, 09:01:00] Jo: Impossible date, keep this.
+Unknown tail
