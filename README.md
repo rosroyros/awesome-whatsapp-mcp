@@ -19,6 +19,9 @@ or docs. Nothing here was tested with a live account unless stated.
 
 Before you connect a personal account, read [Risks](#risks).
 
+Want to sort or filter? [tools.csv](tools.csv) has every entry in one table;
+GitHub shows it with a search box.
+
 ## Free skill: read a WhatsApp chat export
 
 [`skills/whatsapp-chat-export`](skills/whatsapp-chat-export/SKILL.md) lets
@@ -39,53 +42,61 @@ me what I missed."
 ## Self-hosted MCP servers (personal account)
 
 These connect as a linked device, like WhatsApp Web. That route is unofficial;
-see [Risks](#risks).
+see [Risks](#risks). The software is free, but something must stay online to
+receive messages: your own computer ($0, must stay on) or a small VPS (typically
+about $4–6 a month). Your message history stays with you.
 
-| Project | What it is | Read / send | Runs on | License |
-|---|---|---|---|---|
-| [lharries/whatsapp-mcp](https://github.com/lharries/whatsapp-mcp) | The original and best-known WhatsApp MCP server: Go bridge plus Python MCP server. No commits since July 2025. | Both | Your computer | MIT |
-| [verygoodplugins/whatsapp-mcp](https://github.com/verygoodplugins/whatsapp-mcp) | Maintained continuation of the original, with message search, media tools and optional transcription. | Both | Your computer | MIT |
-| [finereli/whatsapp-mcp](https://github.com/finereli/whatsapp-mcp) | Small remote MCP server for searching and reading your chats. | **Read only** | Your Cloudflare account (Workers Paid) | MIT |
-| [felipeadeildo/whatsapp-mcp](https://github.com/felipeadeildo/whatsapp-mcp) | Cloudflare deployment with searchable storage, multiple accounts and messaging tools. | Both | Your Cloudflare account (about $5/month per README) | GPL-3.0 |
-| [FelixIsaac/whatsapp-mcp-extended](https://github.com/FelixIsaac/whatsapp-mcp-extended) | Extended fork: group admin, webhooks, polls, recipient allowlist, selectable tool sets. | Both | Your computer, Docker | MIT |
-| [BrOrlandi/whatsapp-mcp-local](https://github.com/BrOrlandi/whatsapp-mcp-local) | Desktop app that exposes WhatsApp as a local MCP endpoint (uses wacli). | Both | Your computer (must stay on) | MIT |
-| [BrOrlandi/whatsapp-mcp](https://github.com/BrOrlandi/whatsapp-mcp) | Go gateway with a web panel and authenticated remote MCP. | Both | Your server | MIT |
-| [ericporres/whatsapp-mcp-server](https://github.com/ericporres/whatsapp-mcp-server) | Group-focused server: read, search, export and reply, with a bounded message buffer. | Both, groups | Your computer or server | MIT |
-| [delltrak/wamcp](https://github.com/delltrak/wamcp) | TypeScript server with two backends: WhatsApp Web or the Business Cloud API. | Both | Your server, Docker + Redis | MIT (per README) |
-| [WAHA MCP](https://waha.devlike.pro/docs/apps/mcp/) | Self-hosted WhatsApp HTTP API with a built-in MCP app and scoped keys. | Both | Your server, Docker | Apache-2.0 |
+| Name | What it is | Reads / sends | Where history is kept | Runs on | License |
+|---|---|---|---|---|---|
+| [finereli/whatsapp-mcp](https://github.com/finereli/whatsapp-mcp) | Small remote MCP server for searching and reading your chats. | **Read only** | Your Cloudflare account | Your Cloudflare account (Workers Paid plan) | MIT |
+| [lharries/whatsapp-mcp](https://github.com/lharries/whatsapp-mcp) | The original and best-known WhatsApp MCP server: Go bridge plus Python MCP server. No commits since July 2025. | Reads and sends | Your computer | Your computer | MIT |
+| [verygoodplugins/whatsapp-mcp](https://github.com/verygoodplugins/whatsapp-mcp) | Maintained continuation of the original, with message search, media tools and optional transcription. | Reads and sends | Your computer | Your computer | MIT |
+| [felipeadeildo/whatsapp-mcp](https://github.com/felipeadeildo/whatsapp-mcp) | Cloudflare deployment with searchable storage, multiple accounts and messaging tools. | Reads and sends | Your Cloudflare account | Your Cloudflare account (about $5/month per README) | GPL-3.0 |
+| [FelixIsaac/whatsapp-mcp-extended](https://github.com/FelixIsaac/whatsapp-mcp-extended) | Extended fork: group admin, webhooks, polls, recipient allowlist, selectable tool sets. | Reads and sends | Your computer | Your computer, Docker | MIT |
+| [BrOrlandi/whatsapp-mcp-local](https://github.com/BrOrlandi/whatsapp-mcp-local) | Desktop app that exposes WhatsApp as a local MCP endpoint (uses wacli). | Reads and sends | Your computer | Your computer (must stay on) | MIT |
+| [BrOrlandi/whatsapp-mcp](https://github.com/BrOrlandi/whatsapp-mcp) | Go gateway with a web panel and authenticated remote MCP. | Reads and sends | Your server | Your server | MIT |
+| [ericporres/whatsapp-mcp-server](https://github.com/ericporres/whatsapp-mcp-server) | Group-focused server: read, search, export and reply. | Reads and sends (groups) | Your machine, last 1,500 messages per group | Your computer or server | MIT |
+| [delltrak/wamcp](https://github.com/delltrak/wamcp) | TypeScript server with two backends: WhatsApp Web or the Business Cloud API. | Reads and sends | Your server | Your server, Docker + Redis | MIT (per README) |
+| [WAHA MCP](https://waha.devlike.pro/docs/apps/mcp/) | Self-hosted WhatsApp HTTP API with a built-in MCP app and scoped keys. | Reads and sends | Your server | Your server, Docker | Apache-2.0 |
 
 ## Hosted services (personal account)
 
-Someone else runs the connection. Still a linked device unless noted.
+Someone else runs the connection, so your messages pass through their servers.
+Still a linked device unless noted. "Where history is kept" comes from each
+service's own privacy policy or docs.
 
-| Service | What it is | Read / send | Price |
-|---|---|---|---|
-| [Blueticks MCP](https://blueticks.co/blog/connect-whatsapp-to-claude-mcp-integration) | Hosted MCP connector for your WhatsApp number. | Both | Paid, from $9/month, trial |
-| [Periskope MCP](https://docs.periskope.app/ai/mcp) | Hosted MCP over a shared team inbox, chats and tickets. | Both | Paid, per user |
-| [Wassenger MCP](https://app.wassenger.com/help/mcp) | Hosted MCP for chats and messaging; supports linked device and Business API. | Both | Paid, trial |
-| [2Chat MCP](https://2chat.co/features/mcp-server) | Hosted MCP for WhatsApp, SMS and calls; linked device and Business API. | Both | Paid, trial |
-| [Whapi.Cloud MCP](https://whapi.cloud/mcp-whatsapp-api) | Local MCP adapter for Whapi's hosted gateway. | Both | Free sandbox (5 chats/month), then paid |
-| [GREEN-API MCP](https://green-api.com/en/docs/integration/mcp/integration-setup/) | Hosted MCP with messaging, notifications and groups. | Both | Free developer plan (3 chats), then paid |
-| [wa2agent](https://wa2agent.link) | Hosted MCP for personal agents; you choose which chats it can see; messages encrypted with a key only your agent holds. Disclosure: built by this list's maintainer. | **Read only** | Invite-only pilot |
+| Name | What it is | Reads / sends | Where history is kept | Runs on | Price |
+|---|---|---|---|---|---|
+| [wa2agent](https://wa2agent.link) | Hosted MCP for personal agents; you choose which chats it can see. Disclosure: built by this list's maintainer. | **Read only** | Theirs: 30 days, encrypted with a key only your agent holds ([privacy](https://wa2agent.link/privacy)) | Hosted | Invite-only pilot |
+| [Blueticks MCP](https://blueticks.co/blog/connect-whatsapp-to-claude-mcp-integration) | Hosted MCP connector for your WhatsApp number. | Reads and sends | Theirs, until you ask for deletion ([policy](https://blueticks.co/privacy-policy)) | Hosted | Paid, from $9/month, trial |
+| [Periskope MCP](https://docs.periskope.app/ai/mcp) | Hosted MCP over a shared team inbox, chats and tickets. | Reads and sends | Theirs, while you use it; deleted within 30 days after ([DPA](https://periskope.app/legal/dpa)) | Hosted | Paid, per user |
+| [Wassenger MCP](https://app.wassenger.com/help/mcp) | Hosted MCP for chats and messaging; linked device or Business API. | Reads and sends | Theirs, up to 1,000 messages per chat ([FAQ](https://app.wassenger.com/help/category/faq)) | Hosted | Paid, trial |
+| [2Chat MCP](https://2chat.co/features/mcp-server) | Hosted MCP for WhatsApp, SMS and calls; linked device or Business API. | Reads and sends | Theirs, while your account is open; deleted within 6 months of closing ([policy](https://2chat.co/legal/privacy-policy)) | Hosted | Paid, trial |
+| [Whapi.Cloud MCP](https://whapi.cloud/mcp-whatsapp-api) | Local MCP adapter for Whapi's hosted gateway. | Reads and sends | Theirs: short-lived caches; media 30 days ([help](https://support.whapi.cloud/help-desk/receiving/file-expiration-period)) | Hosted gateway, local adapter | Free sandbox (5 chats/month), then paid |
+| [GREEN-API MCP](https://green-api.com/en/docs/integration/mcp/integration-setup/) | Hosted MCP with messaging, notifications and groups. | Reads and sends | Theirs, period not stated ([policy](https://green-api.com/en/privacy-policy)) | Hosted | Free developer plan (3 chats), then paid |
 
 ## Business API (official)
 
-Uses Meta's WhatsApp Business Platform. Official does not mean Meta endorses a
-community project. Meta fees apply.
+Uses Meta's WhatsApp Business Platform. It needs a verified Meta business and
+Meta's approval of your use case; reviews can take weeks and can be rejected.
+It is built for businesses messaging customers, not for reading your personal
+chats. Meta fees apply. Official does not mean Meta endorses a community project.
 
-| Project | What it is | Read / send | Notes |
-|---|---|---|---|
-| [Meta WhatsApp Business Tools MCP](https://developers.facebook.com/documentation/mcp/whatsapp-business-tools-mcp) | Meta's own MCP for account, number and template setup, plus test sends. | Test sends; reading not verified | Endpoint `https://mcp.facebook.com/whatsapp_business_tools`. Docs were partly inaccessible when checked. |
-| [Kapso MCP](https://docs.kapso.ai/docs/whatsapp/mcp) | Hosted MCP: send, read stored conversations, manage templates and webhooks. | Both (read-only by default) | Free tier: 2,000 messages/month, one number |
-| [FredShred7/whatsapp-mcp-server](https://github.com/FredShred7/whatsapp-mcp-server) | Community Cloud API wrapper for messages, media and templates. | Both; receiving needs webhooks | MIT; no personal chat history |
+| Name | What it is | Reads / sends | Where history is kept | Runs on | Price / license |
+|---|---|---|---|---|---|
+| [Meta WhatsApp Business Tools MCP](https://developers.facebook.com/documentation/mcp/whatsapp-business-tools-mcp) | Meta's own MCP for account, number and template setup, plus test sends. Endpoint `https://mcp.facebook.com/whatsapp_business_tools`. | Test sends; reading not verified | Not a chat store | Meta | Not verified |
+| [Kapso MCP](https://docs.kapso.ai/docs/whatsapp/mcp) | Hosted MCP: send, read stored conversations, manage templates and webhooks. | Reads and sends (read-only by default) | Theirs, period not stated | Hosted | Free tier: 2,000 messages/month, one number |
+| [FredShred7/whatsapp-mcp-server](https://github.com/FredShred7/whatsapp-mcp-server) | Community Cloud API wrapper for messages, media and templates. Receiving needs webhooks. | Reads and sends | In memory only, while it runs | Your computer or server | MIT |
 
 ## Automation platforms
 
-| Platform | What it is | Notes |
-|---|---|---|
-| [n8n](https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.whatsapp/) | WhatsApp Business Cloud node and trigger; workflows can be exposed through n8n's MCP Server Trigger. | Free self-hosted community edition; Cloud is paid |
-| [Zapier](https://zapier.com/mcp/whatsapp-business) | WhatsApp Business workflows; MCP actions for sending. | Paid plan for this integration |
-| [OpenClaw](https://docs.openclaw.ai/channels/whatsapp) | Agent gateway with a native WhatsApp channel that routes messages to your agent and sends replies. | Linked device; MIT |
+Business Cloud API unless noted.
+
+| Name | What it is | Reads / sends | Where history is kept | Runs on | Price / license |
+|---|---|---|---|---|---|
+| [n8n](https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.whatsapp/) | WhatsApp Business Cloud node and trigger; workflows can be exposed through n8n's MCP Server Trigger. | Reads and sends | Wherever your workflow saves it | Self-hosted or n8n Cloud | Free community edition; Cloud is paid |
+| [Zapier](https://zapier.com/mcp/whatsapp-business) | WhatsApp Business workflows; MCP actions for sending. | Mostly sends; incoming via triggers | Zapier task history | Hosted | Paid plan for this integration |
+| [OpenClaw](https://docs.openclaw.ai/channels/whatsapp) | Agent gateway with a native WhatsApp channel that routes messages to your agent and sends replies. Linked device. | Reads and sends | Your gateway | Self-hosted | MIT |
 
 ## Manual route (free)
 
