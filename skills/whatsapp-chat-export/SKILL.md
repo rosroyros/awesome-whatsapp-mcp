@@ -55,6 +55,29 @@ filters or missing context. Resolve later corrections before reporting:
 Draft suggestions in the reply. Ask before creating calendar entries or
 tasks, or contacting anyone, unless the user already authorized that action.
 
+## Example
+
+User: "Here's the export of my kid's class group. What did I miss this week?"
+
+Output, after parsing:
+
+```
+Class 3B group, 14-20 Oct (212 messages, day/month dates)
+
+Decisions
+- Trip to the science museum is on Thu 23 Oct. ("Bus leaves 8:15 sharp", Ms. Levi, 17/10 09:02)
+
+Events
+- Thu 23 Oct 08:15: museum trip, packed lunch needed. (Ms. Levi, 17/10 09:02)
+- Mon 27 Oct: photo day, moved from Friday. (Dana, 19/10 18:40)
+
+Tasks for you
+- Sign the trip form by Wed 22 Oct. (Ms. Levi, 17/10 09:05)
+
+Waiting on you
+- Dana asked who can drive on Thursday. No reply yet. (20/10 07:51)
+```
+
 ## Privacy
 
 The parser runs locally and makes no network requests. The export stays local
