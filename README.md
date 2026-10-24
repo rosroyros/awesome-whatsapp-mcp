@@ -48,7 +48,6 @@ about $4–6 a month). Your message history stays with you.
 
 | Name | What it is | Reads / sends | Where history is kept | Runs on | License |
 |---|---|---|---|---|---|
-| [finereli/whatsapp-mcp](https://github.com/finereli/whatsapp-mcp) | Small remote MCP server for searching and reading your chats. | **Read only** | Your Cloudflare account | Your Cloudflare account (Workers Paid plan) | MIT |
 | [lharries/whatsapp-mcp](https://github.com/lharries/whatsapp-mcp) | The original and best-known WhatsApp MCP server: Go bridge plus Python MCP server. No commits since July 2025. | Reads and sends | Your computer | Your computer | MIT |
 | [verygoodplugins/whatsapp-mcp](https://github.com/verygoodplugins/whatsapp-mcp) | Maintained continuation of the original, with message search, media tools and optional transcription. | Reads and sends | Your computer | Your computer | MIT |
 | [felipeadeildo/whatsapp-mcp](https://github.com/felipeadeildo/whatsapp-mcp) | Cloudflare deployment with searchable storage, multiple accounts and messaging tools. | Reads and sends | Your Cloudflare account | Your Cloudflare account (about $5/month per README) | GPL-3.0 |
@@ -67,6 +66,7 @@ service's own privacy policy or docs.
 
 | Name | What it is | Reads / sends | Where history is kept | Runs on | Price |
 |---|---|---|---|---|---|
+| [finereli/whatsapp-mcp](https://whatsapp.finereli.com) | Hosted remote MCP for searching and reading your chats; open source ([GitHub](https://github.com/finereli/whatsapp-mcp), MIT). | **Read only** | Theirs, encrypted at rest with a key tied to your account ([maintainer](https://github.com/finereli/whatsapp-mcp/issues/2#issuecomment-6384735244)) | Hosted | Free |
 | [wa2agent](https://wa2agent.link) | Hosted MCP for personal agents; you choose which chats it can see. Disclosure: built by this list's maintainer. | **Read only** | Theirs: 30 days, encrypted with a key only your agent holds ([privacy](https://wa2agent.link/privacy)) | Hosted | Invite-only pilot |
 | [Blueticks MCP](https://blueticks.co/blog/connect-whatsapp-to-claude-mcp-integration) | Hosted MCP connector for your WhatsApp number. | Reads and sends | Theirs, until you ask for deletion ([policy](https://blueticks.co/privacy-policy)) | Hosted | Paid, from $9/month, trial |
 | [Periskope MCP](https://docs.periskope.app/ai/mcp) | Hosted MCP over a shared team inbox, chats and tickets. | Reads and sends | Theirs, while you use it; deleted within 30 days after ([DPA](https://periskope.app/legal/dpa)) | Hosted | Paid, per user |
