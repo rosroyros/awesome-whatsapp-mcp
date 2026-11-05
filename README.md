@@ -77,6 +77,7 @@ service's own privacy policy or docs.
 | [2Chat MCP](https://2chat.co/features/mcp-server) | Hosted MCP for WhatsApp, SMS and calls; linked device or Business API. | Reads and sends | Theirs, while your account is open; deleted within 6 months of closing ([policy](https://2chat.co/legal/privacy-policy)) | Hosted | Paid, trial |
 | [Whapi.Cloud MCP](https://whapi.cloud/mcp-whatsapp-api) | Local MCP adapter for Whapi's hosted gateway. | Reads and sends | Theirs: short-lived caches; media 30 days ([help](https://support.whapi.cloud/help-desk/receiving/file-expiration-period)) | Hosted gateway, local adapter | Free sandbox (5 chats/month), then paid |
 | [GREEN-API MCP](https://green-api.com/en/docs/integration/mcp/integration-setup/) | Hosted MCP with messaging, notifications and groups. | Reads and sends | Theirs, period not stated ([policy](https://green-api.com/en/privacy-policy)) | Hosted | Free developer plan (3 chats), then paid |
+| [Circles](https://usecircles.app/en/whatsapp-mcp) | Hosted remote MCP and HTTP API for your personal number; Claude, ChatGPT, Instinct, Cursor and others. You choose the chats it sees and set each to read only or read and send; voice notes transcribed (Hebrew, English); activity log of every agent request. | Reads; sends in chats you allow | Theirs, for the history window you choose (full, 90, 60 or 30 days); unlinking deletes it ([privacy](https://usecircles.app/en/privacy)) | Hosted | Free for 2 chats (up to 3 months), then from $14.90/month; 14-day trial, no card |
 
 ## Business API (official)
 
