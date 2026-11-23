@@ -58,6 +58,7 @@ about $4–6 a month). Your message history stays with you.
 | [ericporres/whatsapp-mcp-server](https://github.com/ericporres/whatsapp-mcp-server) | Group-focused server: read, search, export and reply. | Reads and sends (groups) | Your machine, last 1,500 messages per group | Your computer or server | MIT |
 | [delltrak/wamcp](https://github.com/delltrak/wamcp) | TypeScript server with two backends: WhatsApp Web or the Business Cloud API. | Reads and sends | Your server | Your server, Docker + Redis | MIT (per README) |
 | [WAHA MCP](https://waha.devlike.pro/docs/apps/mcp/) | Self-hosted WhatsApp HTTP API with a built-in MCP app and scoped keys. | Reads and sends | Your server | Your server, Docker | Apache-2.0 |
+| [WA MCP](https://github.com/tsahospital-beep/wa-mcp) | Go bridge and Python MCP tools for chat search, local voice transcription and a daily list of open requests. | Reads and sends (sending off by default) | Your computer or server | Your computer or server | MIT |
 
 ## Hosted services (personal account)
 
